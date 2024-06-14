@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { UiComponent } from './ui/components/ui/ui.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TicketsModule } from './tickets/tickets.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { UiComponent } from './ui/components/ui/ui.component';
   imports: [
     BrowserModule,
     CoreModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

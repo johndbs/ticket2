@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Ticket } from '../../core/models/ticket';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { Ticket } from '../../core/models/ticket';
 export class TicketService {
 
   private apiUrl = 'http://localhost:3000/tickets';
+
 
   constructor(private http: HttpClient) { }
 
