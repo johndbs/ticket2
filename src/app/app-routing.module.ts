@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: '', redirectTo: '/tickets', pathMatch:'full'},
-  {path: 'tickets', loadChildren: () => import('./tickets/tickets-routing.module').then(m => m.TicketsRoutingModule)},
-  {path: '**', loadChildren: () => import('./page-not-found/page-not-found-routing.module').then(m => m.PageNotFoundRoutingModule)}
+  {path: 'tickets', loadChildren: () => import('./tickets/tickets.module').then(m => m.TicketsModule)},
+  {path: '**', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
