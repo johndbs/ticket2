@@ -35,3 +35,7 @@ npm install json-server --save-dev
 ```
 import 'jest-preset-angular/setup-jest';
 ```
+
+```
+npm uninstall karma karma-chrome-launcher karma-coverage karma-jasmine karma-jasmine-html-reporter
+```
