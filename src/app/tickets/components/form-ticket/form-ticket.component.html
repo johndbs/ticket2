@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="title">Title</label>
+        <input formControlName="title" type="text" id="form-title">
+        <span *ngIf="form.controls['title'].invalid && form.controls['title'].touched">
+            Field in error
+        </span>
+    </div>
+
+    <div>
+        <label for="description">Title</label>
+        <textarea formControlName="description" type="text" id="form-description"></textarea>
+        <span *ngIf="form.controls['description'].invalid && form.controls['description'].touched">
+            Field in error
+        </span>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+
+</form>

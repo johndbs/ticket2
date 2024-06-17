@@ -1,1 +1,1 @@
-<p>page-edit-ticket works!</p>
+<app-form-ticket *ngIf="item$ | async as item" [init]="item" (submited)="action($event)"></app-form-ticket>
