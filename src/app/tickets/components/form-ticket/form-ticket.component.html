@@ -11,9 +11,6 @@
     <div>
         <label for="description">Title</label>
         <textarea formControlName="description" type="text" id="form-description"></textarea>
-        <span *ngIf="form.controls['description'].invalid && form.controls['description'].touched">
-            Field in error
-        </span>
     </div>
 
     <button type="submit" [disabled]="form.invalid">Submit</button>
